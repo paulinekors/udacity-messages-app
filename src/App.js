@@ -11,11 +11,16 @@ class App extends Component {
   };
   onMessage = (username, message) => {
     const newMessage = {
-      ['username']: username,
-      ['text']: message,
+      // ['username']: username,
+      // ['text']: message,
+      username: username,
+      text: message,
     };
+    // this.setState(currState => ({
+    //   messages: currState.messages.concat([newMessage]),
+    // }));
     this.setState(currState => ({
-      messages: currState.messages.concat([newMessage]),
+      messages: [...currState.messages, newMessage]
     }));
   };
   render() {
